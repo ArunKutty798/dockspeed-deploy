@@ -1,0 +1,13 @@
+<svg width="121" height="121" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="racingLogo 1" clip-path="url(#clip0)">
+<path id="Vector" d="M0.5 32.1297L60.5 1.32971V30.7547L0.5 61.8297V32.1297Z" fill="#FF2C2C"/>
+<path id="Vector_2" d="M60.5 30.8L120.5 0V29.425L60.5 60.5V30.8Z" fill="#FF2C2C"/>
+<path id="Vector_3" d="M0.5 91.3001L60.5 60.5V89.9249L0.5 121V91.3001Z" fill="#FF2C2C"/>
+<path id="Vector_4" d="M60.5 89.9706L120.5 59.1704V88.5954L60.5 119.67V89.9706Z" fill="#FF2C2C"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="120" height="121" fill="white" transform="translate(0.5)"/>
+</clipPath>
+</defs>
+</svg>
