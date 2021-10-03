@@ -60,9 +60,9 @@ const HeroSlider = () => {
         </div>
         <div className="flex">
           <aside>
-            <span style={{ color: "#FF2C2C" }}>79.68 ETH</span>
+            <span style={{ color: "#FF2C2C" }}  className="pointer" >79.68 ETH</span>
           </aside>
-          <p>View car</p>
+          <p className="pointer">View car</p>
         </div>
       </div>
     </div>

@@ -565,8 +565,7 @@ input {
     word-break: break-all;
   }
   @media (max-width: 768px) {
-    grid-template-columns: repeat(1,1fr);
-    
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -662,6 +661,10 @@ input {
   background: #0b0909;
   padding: 30px;
   position: relative;
+  &_head {
+    display: flex;
+    justify-content: space-between;
+  }
   &_tag {
     position: absolute;
     right: 1%;
@@ -675,6 +678,10 @@ input {
       background: #161616;
       box-shadow: 0px 3px 25px 0px #00000033;
       padding: 20px;
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
     }
   }
 }
@@ -1086,7 +1093,7 @@ input {
   visibility: visible;
   opacity: 1;
   transition: background-color 300ms ease-in-out, top 300ms ease-in;
-
+  
   &.inactive {
     background: rgba(0, 0, 0, 0.5);
     transition: background-color 300ms ease-in-out, top 300ms ease-out;
@@ -1109,6 +1116,14 @@ input {
     display: flex;
     align-items: center;
     gap: 20px;
+
+    &_buttonLinks {
+      display: flex;
+   gap: 20px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
 
     a {
       font-weight: bold;
@@ -1249,7 +1264,7 @@ input {
   z-index: 1100;
   padding: 2.5rem;
   border-radius: 5px;
-  max-height: 75%;
+  max-height: 80%;
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -1259,4 +1274,27 @@ input {
   @media (max-width: 576px) {
     max-width: 90%;
   }
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  border: 1px solid rgba(219, 219, 219, 1);
+  background: transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 5px;
+}
+
+.checkbox:active,
+.checkbox:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox:checked {
+  background: rgba(255, 44, 44, 1);
+  border: 1px solid #ff2c2c;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
 }

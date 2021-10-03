@@ -15,11 +15,24 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [localState, setLocalState] = useState("");
+
+  const renderPopUps = (
+    <>
+      {localState === "gamer" || localState === "investor" ? (
+        <PopUps variant="launch" />
+      ) : (
+        <PopUps variant="onboard" />
+      )}
+    </>
+  );
+
   useEffect(() => {
-    if (localStorage) {
-      setLocalState(localStorage?.getItem("youAre"));
+    const isState = localStorage.getItem("youAre");
+    if (isState) {
+      setLocalState(isState);
+     {renderPopUps}
     }
-  }, [localState]);
+  });
 
   const renderWhyPreferUs = (
     <div className="preferUs">
@@ -148,7 +161,7 @@ export default function Home() {
         <p className="text_secondary_14_w400 mb-10">
           0x66cB2D528A3380Bd919245D8812b45B03D421Ce5
         </p>
-        <p className="text_label_14_w400">
+        <p className="text_label_14_w400 pointer">
           Send 1 DOCK to Raffle{" "}
           <img src="/icons/arrowRs.svg" alt="arrow" className="ml-10" />
         </p>
@@ -167,11 +180,7 @@ export default function Home() {
       <HeroSlider />
 
       <div className="home">
-        {/* {localState === "gamer" || localState === "investor" ? (
-          <PopUps variant="launch" />
-        ) : (
-          <PopUps variant="onboard" />
-        )} */}
+        {renderPopUps}
         {renderWhyPreferUs}
         {renderWhyUs}
         <NewlyMinted variant="cars" />

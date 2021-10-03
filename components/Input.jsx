@@ -18,6 +18,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         readOnly={readOnly}
+        className={type === "checkbox" ? "checkbox" : null}
       />
       {addIcons1 && <img src={addIcons1} alt="icon1" className="input_img_1" />}
       {addIcons2 && <img src={addIcons2} alt="icon2" className="input_img_2" />}
