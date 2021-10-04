@@ -151,7 +151,7 @@ const Header = () => {
           </>
         </Link>
         <Link href="/">
-          <>Launch platform</>
+          <Button>Launch platform</Button>
         </Link>
       </div>
       <img
