@@ -77,10 +77,14 @@ const Header = () => {
         </a>
       </Link>
       <Link href="/whitepaper">
-        <Button variant="secondary">Whitepaper</Button>
+        <>
+          <Button variant="secondary">Whitepaper</Button>
+        </>
       </Link>
       <Link href="/">
-        <Button>Launch Platform</Button>
+        <>
+          <Button>Launch Platform</Button>
+        </>
       </Link>
     </div>
   );
@@ -142,9 +146,13 @@ const Header = () => {
     <div className="menu">
       <div className="menu_buttonLinks">
         <Link href="/whitepaper">
-          <Button variant="secondary">Whitepaper</Button>
+          <>
+            <Button variant="secondary">Whitepaper</Button>
+          </>
         </Link>
-        <Link href="/">Launch platform</Link>
+        <Link href="/">
+          <>Launch platform</>
+        </Link>
       </div>
       <Image
         src={sidebar ? "/icons/close.svg" : "/icons/menuList.svg"}
