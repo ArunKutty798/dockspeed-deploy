@@ -16,9 +16,11 @@ const socialMediaIcons = [
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [callSubscribe, setCallSubscribe] = useState(false);
 
   const handleSubmit = () => {
     console.log(email);
+    setCallSubscribe(true);
     setEmail("");
   };
 
@@ -88,17 +90,24 @@ const Footer = () => {
       <div className="singleCol">
         <p className="mb-30 text_primary_16">Subscribe to weekly newsletter</p>
         <Input
-          type="text"
+          type="email"
           placeholder="Enter email address"
           onChange={(e) => setEmail(e.target.value)}
         />
-        <Button
-          variant="primary"
-          style={{ width: "140px" }}
-          onClick={() => handleSubmit()}
-        >
-          Subscribe
-        </Button>
+        {callSubscribe ? (
+          <p className="text_success_label_14__w400">
+            Congrats on signing up for our newsletter ! You shall be receiving
+            our community updates on time via your email
+          </p>
+        ) : (
+          <Button
+            variant="primary"
+            style={{ width: "140px" }}
+            onClick={() => handleSubmit()}
+          >
+            Subscribe
+          </Button>
+        )}
       </div>
     </div>
   );

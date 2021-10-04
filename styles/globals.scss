@@ -262,6 +262,16 @@ img {
   color: rgba(255, 44, 44, 1);
 }
 
+.text_success_label_14__w400 {
+  font-family: "ElectronicArtsText-Regular";
+  font-size: 0.875em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #1df359;
+}
+
 .mt-5 {
   margin-top: 5px;
 }
@@ -1093,7 +1103,7 @@ input {
   visibility: visible;
   opacity: 1;
   transition: background-color 300ms ease-in-out, top 300ms ease-in;
-  
+
   &.inactive {
     background: rgba(0, 0, 0, 0.5);
     transition: background-color 300ms ease-in-out, top 300ms ease-out;
@@ -1119,7 +1129,7 @@ input {
 
     &_buttonLinks {
       display: flex;
-   gap: 20px;
+      gap: 20px;
       @media (max-width: 768px) {
         display: none;
       }

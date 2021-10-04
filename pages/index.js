@@ -14,12 +14,15 @@ import PopUps from "../patterns/PopUps";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [localState, setLocalState] = useState("");
+  const [localStateYouAre, setLocalStateYouAre] = useState("");
+  const [localStateGoingTo, setLocalStateGoingTo] = useState("");
 
   const renderPopUps = (
     <>
-      {localState === "gamer" || localState === "investor" ? (
+      {localStateYouAre === "gamer" || localStateYouAre === "investor" ? (
         <PopUps variant="launch" />
+      ) : localStateGoingTo === "marketplace" || localStateGoingTo === "playGame" ? (
+        <></>
       ) : (
         <PopUps variant="onboard" />
       )}
@@ -27,10 +30,13 @@ export default function Home() {
   );
 
   useEffect(() => {
-    const isState = localStorage.getItem("youAre");
-    if (isState) {
-      setLocalState(isState);
-     {renderPopUps}
+    const isStateYourAre = localStorage.getItem("youAre");
+    if (isStateYourAre) {
+      setLocalStateYouAre(isStateYourAre);
+    }
+    const isStateGoingTo = localStorage.getItem("goingTo");
+    if (isStateGoingTo) {
+      setLocalStateGoingTo(isStateGoingTo);
     }
   });
 
@@ -180,7 +186,7 @@ export default function Home() {
       <HeroSlider />
 
       <div className="home">
-        {renderPopUps}
+        {/* {renderPopUps} */}
         {renderWhyPreferUs}
         {renderWhyUs}
         <NewlyMinted variant="cars" />

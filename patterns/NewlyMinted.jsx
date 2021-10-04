@@ -26,6 +26,7 @@ const NewlyMinted = ({ variant }) => {
                 auction={data.auction}
                 carsAvailable={data.carsAvailable}
                 reserverdPrice={data.reserverdPrice}
+                key={index}
               />
             ))
           : newelyMintedEquipments.map((data, index) => (
@@ -38,6 +39,7 @@ const NewlyMinted = ({ variant }) => {
                 auction={data.auction}
                 carsAvailable={data.carsAvailable}
                 reserverdPrice={data.reserverdPrice}
+                key={index}
               />
             ))}
       </div>
