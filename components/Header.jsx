@@ -154,7 +154,7 @@ const Header = () => {
           <>Launch platform</>
         </Link>
       </div>
-      <Image
+      <img
         src={sidebar ? "/icons/close.svg" : "/icons/menuList.svg"}
         alt="menu"
         width={24}
