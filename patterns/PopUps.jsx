@@ -1,7 +1,7 @@
 import React from "react";
 import PopupCard from "../components/PopupCard";
 
-const PopUps = ({ variant }) => {
+const PopUps = ({ variant, setInitialState }) => {
   const renderOnboard = (
     <PopupCard
       heading="Let us know who you are"
@@ -14,6 +14,7 @@ const PopUps = ({ variant }) => {
       subCardAbout2="I want to be an early holder, and witness a breakout ROI, collect rare and exotic cars in presale & sell on auction. Dedicated roadmap, audited code & envisioned team"
       subCardImg1="/imGamer.svg"
       subCardImg2="/imInvestor.svg"
+      setInitialState={setInitialState}
     />
   );
 
@@ -32,6 +33,7 @@ const PopUps = ({ variant }) => {
       subCardImg1="/playGames.svg"
       subCardImg2="/toMarketPlace.svg"
       variant="launch"
+      setInitialState={setInitialState}
     />
   );
 

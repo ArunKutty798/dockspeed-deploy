@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Footer from "../components/footer";
-import Image from "next/image";
 
 import { nftMarketplace } from "../data/marketPlace";
 import MarketPlaceCard from "../components/MarketPlaceCard";
@@ -14,31 +13,13 @@ import PopUps from "../patterns/PopUps";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [localStateYouAre, setLocalStateYouAre] = useState("");
-  const [localStateGoingTo, setLocalStateGoingTo] = useState("");
-
-  const renderPopUps = (
-    <>
-      {localStateYouAre === "gamer" || localStateYouAre === "investor" ? (
-        <PopUps variant="launch" />
-      ) : localStateGoingTo === "marketplace" || localStateGoingTo === "playGame" ? (
-        <></>
-      ) : (
-        <PopUps variant="onboard" />
-      )}
-    </>
-  );
+  const [initialState, setInitialState] = useState(false);
 
   useEffect(() => {
-    const isStateYourAre = localStorage.getItem("youAre");
-    if (isStateYourAre) {
-      setLocalStateYouAre(isStateYourAre);
-    }
-    const isStateGoingTo = localStorage.getItem("goingTo");
-    if (isStateGoingTo) {
-      setLocalStateGoingTo(isStateGoingTo);
-    }
-  });
+    const data = localStorage.getItem("category");
+    if (data) setInitialState(false);
+    else setInitialState(true);
+  }, []);
 
   const renderWhyPreferUs = (
     <div className="preferUs">
@@ -196,6 +177,9 @@ export default function Home() {
         {renderContact}
       </div>
       <Footer />
+      {initialState && (
+        <PopUps variant="onboard" setInitialState={setInitialState} />
+      )}
     </>
   );
 }
