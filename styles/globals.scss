@@ -1070,6 +1070,10 @@ input {
   overflow-x: hidden;
   margin-bottom: 50px;
 
+  @media (max-width: 576px) {
+    min-height: 80vh;
+  }
+
   .current_slide {
     position: absolute;
     right: 0em;
@@ -1329,6 +1333,9 @@ input {
 
   @media (max-width: 576px) {
     width: 360px;
+    bottom: 3em;
+    left: 20px;
+    right: unset;
   }
 
   > div {
@@ -1337,6 +1344,10 @@ input {
     position: relative;
     transform: skewX(-5deg);
     cursor: pointer;
+
+    @media (max-width: 576px) {
+      max-height: 60px;
+    }
 
     .bg_image {
       position: relative;
