@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "./button";
-
+import DownloadLink from "react-download-link";
 import Link from "next/link";
-import Image from "next/image";
 
 const Header = () => {
   const [position, setPosition] = useState(0);
@@ -76,11 +75,11 @@ const Header = () => {
           Contract
         </a>
       </Link>
-      <Link href="/whitepaper">
-        <>
-          <Button variant="secondary">Whitepaper</Button>
-        </>
-      </Link>
+      <DownloadLink
+        label="Whitepaper"
+        filename="/pdf/whitepaper.pdf"
+        exportFile={() => "whitepaper data"}
+      />
       <Link href="/">
         <>
           <Button>Launch Platform</Button>
@@ -145,11 +144,11 @@ const Header = () => {
   const renderMenu = (
     <div className="menu">
       <div className="menu_buttonLinks">
-        <Link href="/whitepaper">
-          <>
-            <Button variant="secondary">Whitepaper</Button>
-          </>
-        </Link>
+        <DownloadLink
+          label="Whitepaper"
+          filename="/pdf/whitepaper.pdf"
+          exportFile={() => "whitepaper data"}
+        />
         <Link href="/">
           <Button>Launch platform</Button>
         </Link>
@@ -160,6 +159,7 @@ const Header = () => {
         width={24}
         height={24}
         className="menuList cursor"
+        style={{ cursor: "pointer" }}
         onClick={() => setSidebar((s) => !s)}
       />
     </div>

@@ -12,6 +12,8 @@ import BuyDockCard from "../components/BuyDockCard";
 import PopUps from "../patterns/PopUps";
 import { useEffect, useState } from "react";
 
+import ReactPlayer from "react-player";
+
 export default function Home() {
   const [initialState, setInitialState] = useState(false);
 
@@ -36,8 +38,12 @@ export default function Home() {
         </p>
         <Button variant="secondary">Play Game</Button>
       </div>
-      <div>
-        <img src="/preferUs.svg" alt="preferus" />
+      <div className="video_container">
+        <ReactPlayer
+          url="https://vimeo.com/641070212"
+          width="100%"
+          height="360px"
+        />
       </div>
     </div>
   );
@@ -113,19 +119,19 @@ export default function Home() {
       </div>
       <div className="buyDock_card">
         <BuyDockCard
-          title="Buy"
+          title="Buy Dock ----> Buy Speed "
           about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero curabitur imperdietut. "
           amount="0000.00000 BNB"
           value="~ 0.00 USD"
         />
         <BuyDockCard
-          title="Sell"
+          title="Stake Token ---> Stake"
           about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero curabitur imperdietut. "
           amount="0000.00000 BNB"
           value="~ 0.00 USD"
         />
         <BuyDockCard
-          title="Transfer"
+          title="Buy NFT car token ---> Buy NFT Car"
           about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero curabitur imperdietut. "
         />
       </div>
@@ -172,7 +178,7 @@ export default function Home() {
         {renderWhyUs}
         <NewlyMinted variant="cars" />
         <NewlyMinted />
-        {renderFastestGrowing}
+        {/* {renderFastestGrowing} */}
         {renderBuyDock}
         {renderContact}
       </div>

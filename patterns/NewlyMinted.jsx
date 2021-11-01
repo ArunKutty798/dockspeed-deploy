@@ -44,9 +44,9 @@ const NewlyMinted = ({ variant }) => {
             ))}
       </div>
 
-      <div className="newlyMinted_button">
+      {/* <div className="newlyMinted_button">
         <Button variant="secondary">Load More {variant === "cars" ? "Cars" : "Equipments"}</Button>
-      </div>
+      </div> */}
     </div>
   );
 };

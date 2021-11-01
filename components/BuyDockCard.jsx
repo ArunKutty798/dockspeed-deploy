@@ -5,9 +5,9 @@ import Input from "./Input";
 const BuyDockCard = ({ title, about, amount, value }) => {
   return (
     <div className="buyDockCard">
-      <p className="mb-15 text_primary_18">{title} {title === "Buy" || title === "Sell" ? "DOCK" : "Token"}</p>
+      <p className="mb-15 text_primary_18">{title}</p>
       <p className="mb-20 text_secondary_14_w400_v3">{about}</p>
-      {title === "Buy" || title === "Sell" ? (
+      {/* {title === "Buy" || title === "Sell" ? (
         <div>
           <Input placeholder="Amount of KARMA" inputDockspeedIcon="/icons/dockSpeedInput.svg"/>
           <p className="mb-15 text_primary_16_w400_regular">{title} Price</p>
@@ -24,7 +24,7 @@ const BuyDockCard = ({ title, about, amount, value }) => {
           </p>
           <Button>Transfer Token</Button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

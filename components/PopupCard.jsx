@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Button from "./button";
 
 const PopupCard = ({
   variant,
@@ -17,9 +18,22 @@ const PopupCard = ({
   const [state, setState] = useState("");
 
   return (
-    <>
-      <div className="popupCard backdrop modal">
-        <img src="/racingTag.svg" alt="racingTag" className="popupCard_tag" />
+    <div className="backdrop">
+      <div className="popupCard  modal">
+        <p className="mb-15 text_primary_24 " style={{ textAlign: "center" }}>
+          Welcome to Dockspeed Metaverse
+        </p>
+        <center>
+          <Button
+            onClick={() => {
+              localStorage.setItem("category", "gamer");
+              setInitialState(false);
+            }}
+          >
+            Enter now
+          </Button>
+        </center>
+        {/* <img src="/racingTag.svg" alt="racingTag" className="popupCard_tag" />
         <p className="mb-15 text_primary_24 ">{heading}</p>
         <p className="mb-20 text_secondary_14_w400">{about}</p>
         <div className="popupCard_subCards">
@@ -63,9 +77,9 @@ const PopupCard = ({
               {variant === "launch" ? "Race Now" : ""}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
-    </>
+    </div>
   );
 };
 

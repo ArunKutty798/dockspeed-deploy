@@ -37,7 +37,7 @@ const PopUps = ({ variant, setInitialState }) => {
     />
   );
 
-  return <>{variant === "onboard" ? renderOnboard : renderLaunch}</>;
+  return <>{<PopupCard setInitialState={setInitialState} />}</>;
 };
 
 export default PopUps;
